@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moved</title>
+<script>
+// The league site moved from /ff-league-tracker/ to /ff-never-sunny/. Keep the page, filters and section.
+(function () {
+  var p = location.pathname;
+  if (p.indexOf("/ff-league-tracker") === 0) {
+    location.replace("/ff-never-sunny" + p.slice("/ff-league-tracker".length) + location.search + location.hash);
+  }
+})();
+</script>
+<style>body{font:16px -apple-system,system-ui,sans-serif;background:#0b0b0f;color:#eee;display:grid;place-items:center;height:100vh;margin:0}a{color:#a970ff}</style>
+</head><body><p>This page has moved to <a href="/ff-never-sunny/">s24cabrera.github.io/ff-never-sunny</a>.</p></body></html>
