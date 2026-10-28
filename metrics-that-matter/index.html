@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Metrics That Matter: a fantasy football app that ranks players with the statistics that best predict fantasy points. A personal project by Scott Cabrera, built with Claude Code.">
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>Metrics That Matter</title>
+<link rel="stylesheet" href="../portfolio.css">
+<script src="../theme.js"></script>
+<script src="../tabs.js"></script>
+</head>
+<body>
+<header class="chrome">
+  <div class="chrome-row">
+    <a class="brand" href="../index.html">Scott Cabrera</a>
+    <nav class="tabs" aria-label="Projects">
+      <a href="../case-study/index.html">League Tracker</a>
+      <a href="index.html" aria-current="page">Metrics That Matter</a>
+      <a href="https://s24cabrera.github.io/ff-never-sunny/">Live record book</a>
+    </nav>
+    <button class="icon-btn" id="theme" aria-label="Switch light or dark"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</header>
+
+<main>
+  <div class="pagehead">
+    <p class="eyebrow">Personal project · Showcase</p>
+    <h1>Metrics That Matter</h1>
+  </div>
+
+  <nav class="sections" aria-label="Sections">
+    <a href="#overview"><span class="n">1</span>Overview</a>
+    <a href="#metrics"><span class="n">2</span>The metrics</a>
+    <a href="#data"><span class="n">3</span>Data</a>
+    <a href="#decisions"><span class="n">4</span>Decisions</a>
+    <a href="#roadmap"><span class="n">5</span>Roadmap</a>
+  </nav>
+
+  <div class="view on" id="v-overview" aria-label="Overview">
+    <div class="lede">
+      <p class="dek">A fantasy football app built on the few statistics that predict fantasy points, applied to my own leagues and their scoring rules, with the evidence for each number one tap away.</p>
+      <p class="meta">Started October 5, 2026 · Built with Claude Code. I make the product decisions; Claude writes most of the code.</p>
+    </div>
+    <div class="card card-pad notice">
+      <div class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+      <div>
+        <p class="card-title">Private, early-stage app</p>
+        <p>The app uses data I am licensed to use for a personal project, including data from the FantasyPros API, so I can't make it public or share that data. The screenshots and examples on this page use only free NFL statistics or made-up numbers.</p>
+      </div>
+    </div>
+    <div class="tiles">
+      <div class="card tile"><div class="n">24</div><div class="l">statistics tested for wide receivers alone, each against what happened next</div></div>
+      <div class="card tile"><div class="n">10</div><div class="l">NFL seasons used to build and test the player score (2016-2025)</div></div>
+      <div class="card tile"><div class="n">4</div><div class="l">of my leagues, each scored with its own rules</div></div>
+      <div class="card tile"><div class="n">3 days</div><div class="l">from the first line of code to a lineup check I use each week</div></div>
+    </div>
+    <section>
+      <div class="section-head"><h2>What it's for</h2></div>
+      <div class="prose">
+        <p>The statistics that predict fantasy points, like expected fantasy points, target share and yards per route run, already exist. They are spread across many sites, buried in wide tables, and rarely tied to a decision about my own roster. It's also hard to know which ones to trust.</p>
+        <p>FantasyPros is where I go for rankings and expert consensus. I wanted a second view built from statistics: a short list of metrics for each position that have predicted well in past seasons, each shown with how much it can be trusted, and scored with my leagues' rules. The test I set for it: answer "start, sit, add or drop, and why?" in under 10 seconds on my phone.</p>
+      </div>
+      <div class="card" style="margin-top:20px">
+        <ul class="list">
+          <li><span class="row-title">Who should I start this week?</span><span class="row-body">My Week checks my lineup in each league. Compare shows each player's range of likely scores and the chance each one outscores the others.</span></li>
+          <li><span class="row-title">Who should I pick up or drop?</span><span class="row-body">My Week suggests pickups from each league's free agents, scored with that league's rules.</span></li>
+          <li><span class="row-title">Which numbers matter for this player, and how much?</span><span class="row-body">Every metric on the boards has signal bars showing how well it has predicted fantasy points in past seasons.</span></li>
+          <li><span class="row-title">Is this player's production real?</span><span class="row-body">Expected fantasy points (what his opportunities should produce) sit next to his actual points, and the player page points out numbers likely to come down.</span></li>
+          <li><span class="row-title">Can I trust the app's numbers?</span><span class="row-body">The Scorecard grades the player score every week, and it is compared with ESPN's projections.</span></li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <h2>What it looks like</h2>
+        <p class="scope">Phone screens from the app, taken during Week 6. Swipe to see more.</p>
+      </div>
+      <div class="shots">
+        <figure class="shot" style="margin:0"><img src="img/boards.png" width="390" height="844" alt="Wide receivers board ranked by this week's projected points, with usage metrics, signal bars and the matchup"><figcaption><b>Boards</b><span>Each position ranked by this week's projected points, with the statistics behind each number. The small rising bars next to a column heading are its signal strength, and Form or Season is picked at the top.</span></figcaption></figure>
+        <figure class="shot" style="margin:0"><img src="img/compare.png" width="390" height="844" alt="Compare screen showing three players, each one's range of likely scores this week, and each one's chance to score the most"><figcaption><b>Compare</b><span>Up to four players side by side: each player's likely range of scores this week and the chance each one scores the most. I have used it to set my lineups every week since I built it.</span></figcaption></figure>
+        <figure class="shot" style="margin:0"><img src="img/player.png" width="390" height="844" alt="Player page with this week's projection, range, and a plain-English summary of his metrics"><figcaption><b>Player page</b><span>A short written summary, generated from the player's metrics, including numbers that are likely to come down.</span></figcaption></figure>
+        <figure class="shot" style="margin:0"><img src="img/scorecard.png" width="390" height="844" alt="Scorecard showing how well the Score ranked quarterbacks this season and in past seasons"><figcaption><b>Scorecard</b><span>How well the player score ranked players before each week's games, checked after the games, next to its results from past seasons.</span></figcaption></figure>
+      </div>
+    </section>
+    <div class="view-next"><a href="#metrics">Next: The metrics</a></div>
+  </div>
+
+  <div class="view" id="v-metrics" aria-label="The metrics">
+    <section>
+      <div class="section-head">
+        <h2>How the metrics that matter are chosen</h2>
+        <p class="scope">This is the core of the app. A statistic earns its place with evidence from past seasons, and the app shows that evidence next to the number.</p>
+      </div>
+      <div class="card">
+        <ul class="list">
+          <li><span class="row-title">1. Start with a wide list</span><span class="row-body">Each position starts with a long list of candidate statistics: 24 for wide receivers, from box-score stats to usage (target share, route participation) and efficiency (yards per route run).</span></li>
+          <li><span class="row-title">2. Test each one against what happened next</span><span class="row-body">For every game from 2017 to 2025, the app takes each statistic's value before the game and checks how well it predicted the player's fantasy points over his next four games. For wide receivers that is more than 10,000 games. It also checks how well a full season predicts the next season.</span></li>
+          <li><span class="row-title">3. Show the result as signal bars</span><span class="row-body">Like the bars on a phone: 4 bars is a strong signal, 3 useful, 2 weak, 1 noise. They sit next to every column on the boards, so I can see how much weight to put on each number. Some statistics are shown but not rated: how often a player finishes in the top 12 or 24 repeats from year to year, but it only follows points per game, so it is labeled descriptive.</span></li>
+          <li><span class="row-title">4. Build one player score from a few of them</span><span class="row-body">For each position, a small set is chosen before looking at results. For wide receivers: expected fantasy points, actual fantasy points, yards per route run and age. Tested on seasons it wasn't built from, the score predicted the next season better than expected fantasy points alone at every position.</span></li>
+          <li><span class="row-title">5. Keep tuning, carefully</span><span class="row-body">Each week's numbers are saved before kickoff and never edited, then graded after the games. A few weeks of results don't change the model mid-season. It is rebuilt once a year with the new season, and a change is adopted only if it does better on seasons it wasn't built from.</span></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:16px">
+        <div class="tablewrap">
+          <table>
+            <caption class="sr-only">Signal strength for selected wide receiver statistics</caption>
+            <thead><tr><th>Wide receivers: what the testing found</th><th>Signal</th><th style="text-align:right">Next 4 games</th><th style="text-align:right">Next season</th></tr></thead>
+            <tbody>
+              <tr><td>Fantasy points per game</td><td><span class="sig"><svg viewBox="0 0 13 10" aria-hidden="true"><rect class="on" x="0" y="7" width="2.3" height="3" rx=".6"/><rect class="on" x="3.3" y="4.8" width="2.3" height="5.2" rx=".6"/><rect class="on" x="6.6" y="2.6" width="2.3" height="7.4" rx=".6"/><rect class="on" x="9.9" y=".4" width="2.3" height="9.6" rx=".6"/></svg>Strong</span></td><td class="num">0.68</td><td class="num">0.68</td></tr>
+              <tr><td>Expected fantasy points per game</td><td><span class="sig"><svg viewBox="0 0 13 10" aria-hidden="true"><rect class="on" x="0" y="7" width="2.3" height="3" rx=".6"/><rect class="on" x="3.3" y="4.8" width="2.3" height="5.2" rx=".6"/><rect class="on" x="6.6" y="2.6" width="2.3" height="7.4" rx=".6"/><rect class="on" x="9.9" y=".4" width="2.3" height="9.6" rx=".6"/></svg>Strong</span></td><td class="num">0.66</td><td class="num">0.66</td></tr>
+              <tr><td>Target share</td><td><span class="sig"><svg viewBox="0 0 13 10" aria-hidden="true"><rect class="on" x="0" y="7" width="2.3" height="3" rx=".6"/><rect class="on" x="3.3" y="4.8" width="2.3" height="5.2" rx=".6"/><rect class="on" x="6.6" y="2.6" width="2.3" height="7.4" rx=".6"/><rect class="on" x="9.9" y=".4" width="2.3" height="9.6" rx=".6"/></svg>Strong</span></td><td class="num">0.64</td><td class="num">0.63</td></tr>
+              <tr><td>Yards per route run</td><td><span class="sig"><svg viewBox="0 0 13 10" aria-hidden="true"><rect class="on" x="0" y="7" width="2.3" height="3" rx=".6"/><rect class="on" x="3.3" y="4.8" width="2.3" height="5.2" rx=".6"/><rect class="on" x="6.6" y="2.6" width="2.3" height="7.4" rx=".6"/><rect x="9.9" y=".4" width="2.3" height="9.6" rx=".6"/></svg>Useful</span></td><td class="num">0.59</td><td class="num">0.60</td></tr>
+              <tr><td>Route participation</td><td><span class="sig"><svg viewBox="0 0 13 10" aria-hidden="true"><rect class="on" x="0" y="7" width="2.3" height="3" rx=".6"/><rect class="on" x="3.3" y="4.8" width="2.3" height="5.2" rx=".6"/><rect class="on" x="6.6" y="2.6" width="2.3" height="7.4" rx=".6"/><rect x="9.9" y=".4" width="2.3" height="9.6" rx=".6"/></svg>Useful</span></td><td class="num">0.52</td><td class="num">0.47</td></tr>
+              <tr><td>Catch rate</td><td><span class="sig"><svg viewBox="0 0 13 10" aria-hidden="true"><rect class="on" x="0" y="7" width="2.3" height="3" rx=".6"/><rect x="3.3" y="4.8" width="2.3" height="5.2" rx=".6"/><rect x="6.6" y="2.6" width="2.3" height="7.4" rx=".6"/><rect x="9.9" y=".4" width="2.3" height="9.6" rx=".6"/></svg>Noise</span></td><td class="num">0.20</td><td class="num">0.24</td></tr>
+              <tr><td>Average depth of target</td><td><span class="sig"><svg viewBox="0 0 13 10" aria-hidden="true"><rect class="on" x="0" y="7" width="2.3" height="3" rx=".6"/><rect x="3.3" y="4.8" width="2.3" height="5.2" rx=".6"/><rect x="6.6" y="2.6" width="2.3" height="7.4" rx=".6"/><rect x="9.9" y=".4" width="2.3" height="9.6" rx=".6"/></svg>Noise</span></td><td class="num">-0.03</td><td class="num">-0.04</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="caption" style="padding:0 20px 18px">Correlation with future fantasy points (PPR), 2017-2025: 1 means it predicted perfectly, 0 means not at all. Catch rate and depth of target are popular, but they barely predict anything for receivers. Route participation rates lower than target share, but it is often the first sign of a role change, so it stays on the board.</p>
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <h2>Form and Season: two ways to read every number</h2>
+        <p class="scope">Every board can show a player's numbers two ways. Neither is a fixed "last 4 games" or "last 8 games."</p>
+      </div>
+      <div class="card">
+        <ul class="list">
+          <li><span class="row-title">Form (the default)</span><span class="row-body">What to expect next. Recent games count most and older games fade, reaching back into last season. Use it for this week's lineup and pickups.</span></li>
+          <li><span class="row-title">Season</span><span class="row-body">Every game this season counts equally: what has happened so far.</span></li>
+          <li><span class="row-title">How fast a game fades depends on the statistic and the position</span><span class="row-body">The fade rates were set by testing 2017-2025. Role numbers fade fast because roles change: a game counts half as much 4 games later, and only 2 games later for running back and tight end roles. Efficiency numbers fade slowly because a few hot games are mostly noise: 12 games for yards per route run, 8 for quarterback efficiency.</span></li>
+          <li><span class="row-title">Why not a fixed window?</span><span class="row-body">Form was tested against every fixed window from the last 1 game to the last 17, at every position, and beat all of them for every statistic tested. For a wide receiver's yards per route run, the last 4 games predict his next four at 0.45; Form predicts them at 0.65. Early in the season, reaching back into last season helps most: for the same statistic, 0.38 using only this season's games and 0.56 when last season's games count too.</span></li>
+        </ul>
+      </div>
+    </section>
+    <div class="view-next"><a href="#data">Next: Data</a></div>
+  </div>
+
+  <div class="view" id="v-data" aria-label="Data">
+    <section>
+      <div class="section-head">
+        <h2>Where the data comes from</h2>
+        <p class="scope">The player score is built only from free NFL data. League data comes from my own league logins.</p>
+      </div>
+      <div class="card">
+        <ul class="list">
+          <li><div class="row-head"><span class="row-title">nflverse</span><span class="when">Free, public</span></div><span class="row-body">The main source for NFL data, 2016 to today: play-by-play, player stats, expected fantasy points, snap counts, which players were on the field for each play, Next Gen Stats, weekly rosters, injury reports, schedules and betting lines. Route counts aren't in free data, so the app estimates them from who was on the field and labels those numbers as estimates.</span></li>
+          <li><div class="row-head"><span class="row-title">ESPN</span><span class="when">My league logins</span></div><span class="row-body">My four leagues' rosters, scoring rules, matchups and free agents, plus ESPN's weekly projections (the benchmark the player score is graded against) and injury status.</span></li>
+          <li><div class="row-head"><span class="row-title">FantasyPros API</span><span class="when">Personal-use license</span></div><span class="row-body">Consensus projections, expert rankings and the injury report, shown beside my numbers for comparison and saved daily. Never used in the player score.</span></li>
+          <li><div class="row-head"><span class="row-title">Sleeper</span><span class="when">Free, public</span></div><span class="row-body">Which players are being added and dropped most across Sleeper leagues, saved daily for later use. Not shown in the app yet.</span></li>
+          <li><div class="row-head"><span class="row-title">Yahoo</span><span class="when">Approved, next</span></div><span class="row-body">My Yahoo API access was just approved, and the sign-in code is written. Next: sign in, then build the sync that brings my Yahoo league's rosters and scoring into the app.</span></li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <h2>How FantasyPros data is used</h2>
+        <p class="scope">I use the FantasyPros API under a license for personal projects. It adds context to the screens I already use, and the sign-in decides who sees it.</p>
+      </div>
+      <div class="card">
+        <ul class="list">
+          <li><span class="row-title">On the screens I already use</span><span class="row-body">In Compare, a small diamond marks FantasyPros' consensus projection, scored with my league's rules, on the same bar as my projection and ESPN's. Compare also shows the expert consensus rank, the best and worst rank among the experts, and how many experts ranked the player; when they disagree widely, the app labels the player "experts split." The player page shows FantasyPros' projection next to mine.</span></li>
+          <li><span class="row-title">Sign-in decides who sees it</span><span class="row-body">There is no separate FantasyPros section. The server checks who is signed in and sends FantasyPros data only to accounts on an approved list. Anyone else sees the same screens without the FantasyPros rows and marker. The data is never sent to them, so it isn't only hidden on the page.</span></li>
+          <li><span class="row-title">Never part of the player score</span><span class="row-body">FantasyPros numbers are shown beside mine for comparison. They are not used to calculate the player score.</span></li>
+          <li><span class="row-title">A daily record</span><span class="row-body">The app saves FantasyPros' weekly projections, weekly rankings, rest-of-season rankings and injury report every day. Over time this history will let me grade the player score against expert consensus and find players where the statistics and the experts disagree.</span></li>
+        </ul>
+      </div>
+
+      <div class="card rb" style="margin-top:16px" role="img" aria-label="Illustration with made-up numbers: two players' ranges of likely scores, each with my projection, ESPN's projection and a FantasyPros diamond above the bar">
+        <p class="chart-title">What FantasyPros adds to Compare</p>
+        <p class="chart-sub">Illustration with made-up numbers, styled like the app. Real FantasyPros numbers stay off this page under the license. Everything marked with a diamond appears only for signed-in, licensed accounts.</p>
+        <div class="rb-row">
+          <div class="rb-name"><b>Player A</b></div>
+          <div class="rb-track">
+            <span class="rb-line" style="left:24.4%;width:66.8%"></span><span class="rb-band" style="left:37.6%;width:31.2%"></span>
+            <span class="rb-espn" style="left:56.8%"></span><span class="rb-fp" style="left:55.2%"></span><span class="rb-dot" style="left:52%"></span>
+          </div>
+          <div class="rb-nums">Floor 6.1 · middle 9.4-17.2 · ceiling 22.8 · <b>mine 13.0</b> · ESPN 14.2 · FantasyPros 13.8</div>
+        </div>
+        <div class="rb-row">
+          <div class="rb-name"><b>Player B</b></div>
+          <div class="rb-track">
+            <span class="rb-line" style="left:18%;width:62.4%"></span><span class="rb-band" style="left:31.2%;width:28.4%"></span>
+            <span class="rb-espn" style="left:50.4%"></span><span class="rb-fp" style="left:41.6%"></span><span class="rb-dot" style="left:44.4%"></span>
+          </div>
+          <div class="rb-nums">Floor 4.5 · middle 7.8-14.9 · ceiling 20.1 · <b>mine 11.1</b> · ESPN 12.6 · FantasyPros 10.4</div>
+        </div>
+        <div class="rb-axis"><span style="left:0%">0</span><span style="left:20%">5</span><span style="left:40%">10</span><span style="left:60%">15</span><span style="left:80%">20</span><span style="left:100%">25</span></div>
+        <div class="rb-legend">
+          <span><i class="k-line"></i>80% of outcomes</span><span><i class="k-band"></i>middle half</span><span><i class="k-dot"></i>my projection</span><span><i class="k-espn"></i>ESPN</span><span><i class="k-fp"></i>FantasyPros consensus projection</span>
+        </div>
+
+        <div class="tablewrap" style="margin-top:20px">
+          <table class="mini">
+            <caption class="sr-only">Compare table with made-up numbers for two players</caption>
+            <thead><tr><th></th><th class="r">Player A</th><th class="r">Player B</th></tr></thead>
+            <tbody>
+              <tr><td>This week (mine)</td><td class="num"><b>13.0</b></td><td class="num"><b>11.1</b></td></tr>
+              <tr><td>ESPN</td><td class="num">14.2</td><td class="num">12.6</td></tr>
+              <tr class="fp"><td><i class="k-fp"></i>FantasyPros</td><td class="num">13.8</td><td class="num">10.4</td></tr>
+              <tr class="fp"><td><i class="k-fp"></i>Expert rank</td>
+                <td class="num">WR14<div class="sub">9-22 · 38 experts</div></td>
+                <td class="num">WR22<div class="sub">12-41 · 38 experts</div><span class="pill no" style="margin-top:4px">experts split</span></td></tr>
+              <tr><td>Player score (before matchup)</td><td class="num">14.6</td><td class="num">12.9</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="caption"><b>Expert rank</b> is FantasyPros' weekly consensus rank at the position. Under it: the best and worst rank any expert gave the player, and how many experts ranked him. When the experts disagree widely, the app labels the player "experts split." Player B's ranks run from 12th to 41st, so he gets the label.</p>
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <h2>Sign-in and who sees what</h2>
+        <p class="scope">A roadmap item for opening the app to more people. The sign-in decides which data each person can see.</p>
+      </div>
+      <div class="card">
+        <ul class="list">
+          <li><div class="row-head"><span class="row-title">Today</span><span class="pill shipped">Built</span></div><span class="row-body">The app is behind a sign-in that uses a one-time code sent by email. I see everything, including FantasyPros data. My dad can also sign in; he sees the app without the FantasyPros data, because the server sends that data only to accounts on an approved list.</span></li>
+          <li><div class="row-head"><span class="row-title">A small group of users</span><span class="pill later">Planned</span></div><span class="row-body">Each person signs in and sees their own leagues and their own My Week. Their league data is stored in a folder that only their sign-in can open. Licensed data such as FantasyPros stays limited to people who are licensed to see it.</span></li>
+          <li><div class="row-head"><span class="row-title">Many users</span><span class="pill later">Later</span></div><span class="row-body">This would need a full back end: account sign-up, secure storage of each person's league connection, and syncing on request. The app already stores data by user, so nothing built so far would need to be thrown away.</span></li>
+        </ul>
+      </div>
+    </section>
+    <div class="view-next"><a href="#decisions">Next: Decisions</a></div>
+  </div>
+
+  <div class="view" id="v-decisions" aria-label="Decisions">
+    <section>
+      <div class="section-head">
+        <h2>How I decide what to build</h2>
+        <p class="scope">These rules are written in the project's vision and backlog documents.</p>
+      </div>
+      <div class="card">
+        <ul class="list">
+          <li><span class="row-title">Every idea gets a decision and a reason</span><span class="row-body">Each idea is marked Now, Later or Not doing. A Later or Not doing needs one of four reasons: it fits a later stage, the effort is too high for the value right now, it adds risk (data quality, licensing, upkeep, or breaking something that works), or it depends on something not built yet.</span></li>
+          <li><span class="row-title">The player score uses only NFL statistics</span><span class="row-body">ESPN's projections are the benchmark I measure it against today, and FantasyPros' consensus is next. Neither is used as an input. The goal is to beat ESPN's projections over a full season by improving my own model.</span></li>
+          <li><span class="row-title">Built for me, with room to grow</span><span class="row-body">Version 1 is for my own use, but leagues and rosters are stored by user, and licensed data is kept apart from everything else. Opening the app to more people later would not require starting over.</span></li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <h2>Decisions I've made</h2>
+        <p class="scope">Examples from the backlog, with the reason recorded at the time.</p>
+      </div>
+      <div class="card">
+        <ul class="list">
+          <li><div class="row-head"><span class="row-title">Compare</span><span class="pill shipped">Moved up, shipped Oct 9</span></div><span class="row-body">The original plan scheduled Compare for November. Deciding between players for my lineup turned out to be what I did most each week, so I built it sooner, with a measured range of likely scores for each player.</span></li>
+          <li><div class="row-head"><span class="row-title">FantasyPros data</span><span class="pill shipped">Controlled by sign-in</span></div><span class="row-body">My API access is for personal use, so FantasyPros numbers sit on top of the screens I already use, and the sign-in decides who gets them. The server refuses that data to anyone else who signs in; it is not only hidden on the page.</span></li>
+          <li><div class="row-head"><span class="row-title">Betting lines</span><span class="pill shipped">Used lightly</span></div><span class="row-body">Each team's betting line is used to adjust a player's weekly projection for the matchup. Adding the game's over/under total made weekly rankings slightly worse on past seasons, so it is shown as context only.</span></li>
+          <li><div class="row-head"><span class="row-title">Player props compared with the player score</span><span class="pill later">Later</span></div><span class="row-body">This could be a useful check on the model, but it needs paid data. It waits until a cheaper test shows that betting markets add something to the player score. If built, it would be a check on the model, not betting picks.</span></li>
+          <li><div class="row-head"><span class="row-title">Daily fantasy lineup optimizer</span><span class="pill no">Not doing</span></div><span class="row-body">The effort is too high for the value. An optimizer needs precise weekly projections and ownership data, the player score is a ranking, and good free optimizers already exist.</span></li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <h2>Shipped so far</h2>
+        <p class="scope">All in October 2026.</p>
+      </div>
+      <div class="card">
+        <ul class="list">
+          <li><div class="row-head"><span class="row-title">Data and the first screen</span><span class="when">Oct 5</span></div><span class="row-body">NFL play-by-play data, a daily saved copy of rankings and projections, and the wide receiver board and player page. Testing which window of games predicts best led to Form.</span></li>
+          <li><div class="row-head"><span class="row-title">Settings, search and weekly finishes</span><span class="when">Oct 5-6</span></div><span class="row-body">One settings screen instead of more buttons on every page, search that understands team nicknames like "Bears" or "Jags", and how often each player finishes in the top tiers.</span></li>
+          <li><div class="row-head"><span class="row-title">All positions, the player score and the Scorecard</span><span class="when">Oct 8-9</span></div><span class="row-body">Boards for every position, signal bars for every metric, the player score, the weekly Scorecard, and My Week: a lineup check and suggested pickups for each of my leagues.</span></li>
+          <li><div class="row-head"><span class="row-title">Compare, confidence and the ESPN benchmark</span><span class="when">Oct 9</span></div><span class="row-body">Compare with ranges of likely scores, a confidence level and win probability for start/sit decisions, saved pre-game numbers, and weekly comparison with ESPN's projections.</span></li>
+          <li><div class="row-head"><span class="row-title">This week or rest of season</span><span class="when">Oct 14-16</span></div><span class="row-body">The switch between this week and the rest of the season, set by the phase of the season, plus strength of schedule through each league's last week and each week's game totals on My Week.</span></li>
+        </ul>
+      </div>
+    </section>
+    <div class="view-next"><a href="#roadmap">Next: Roadmap</a></div>
+  </div>
+
+  <div class="view" id="v-roadmap" aria-label="Roadmap">
+    <section>
+      <div class="section-head">
+        <h2>Built for the fantasy calendar</h2>
+        <p class="scope">What a fantasy manager needs changes through the year. The vision covers the whole year; today the in-season part is built and the rest is on the roadmap.</p>
+      </div>
+      <div class="card">
+        <ul class="list">
+          <li><div class="row-head"><span class="row-title">In-season</span><span class="pill shipped">Built</span></div><span class="row-body"><b>September to early January.</b> Who do I start this week, and who do I add or drop? My Week, the boards, Compare and the Scorecard.</span></li>
+          <li><div class="row-head"><span class="row-title">Recap</span><span class="pill later">Partly built</span></div><span class="row-body"><b>January and February.</b> How did the model do, and what should change? The weekly Scorecard and the ESPN comparison exist today; a full season review is planned.</span></li>
+          <li><div class="row-head"><span class="row-title">Offseason</span><span class="pill later">Planned</span></div><span class="row-body"><b>March to June.</b> What changed on each team, and who does it help or hurt? The Offseason Tracker, built in early 2027.</span></li>
+          <li><div class="row-head"><span class="row-title">Draft</span><span class="pill later">Planned</span></div><span class="row-body"><b>July to early September.</b> Who do I target, and where do the statistics disagree with draft position and expert rankings? Tiers and a market comparison for 2027 drafts.</span></li>
+        </ul>
+      </div>
+      <p class="caption">What the calendar changes today: the app knows the phase from the date, and the phase sets whether the boards and Compare open on this week or the rest of the season. One switch changes that, and the choice holds until the phase changes. Each league's schedule ends in Week 17 or 18, and the look-ahead stops at that league's last week.</p>
+    </section>
+    <section>
+      <div class="section-head">
+        <h2>What's next</h2>
+        <p class="scope">Ordered by the fantasy calendar. Some features need data that only exists at certain times of year.</p>
+      </div>
+      <div class="lanes">
+        <div class="card">
+          <div class="lane-head"><h3>This season</h3><span class="pill next">Next</span></div>
+          <ul class="list">
+            <li><span class="row-title">Yahoo leagues</span><span class="row-body">Yahoo just approved my API access, so my Yahoo league can join the four ESPN leagues.</span></li>
+            <li><span class="row-title">Playoff weeks</span><span class="row-body">Flag byes and hard matchups in each league's playoff weeks.</span></li>
+            <li><span class="row-title">Beat ESPN's projections</span><span class="row-body">Improve the model and measure it against ESPN's weekly projections over the full season, testing each change on past seasons first.</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="lane-head"><h3>Offseason</h3><span class="when">Jan-Mar 2027</span></div>
+          <ul class="list">
+            <li><span class="row-title">Offseason Tracker</span><span class="row-body">Coaching changes, signings, trades and the draft, with the expected fantasy impact for each team. Ready before free agency.</span></li>
+            <li><span class="row-title">Season review and yearly update</span><span class="row-body">Grade the full 2026 season, then rebuild the player score with it, using the same testing rules.</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="lane-head"><h3>Draft season</h3><span class="when">Jul-Aug 2027</span></div>
+          <ul class="list">
+            <li><span class="row-title">Tiers and market comparison</span><span class="row-body">Show where the statistics disagree with draft position and consensus rankings. This needs a year of saved rankings, which the app has been collecting daily since October.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <div class="view-next"><a href="../case-study/index.html">Also see: FF League Tracker case study</a></div>
+  </div>
+</main>
+
+<footer>Scott Cabrera · <a href="mailto:scott.cabrera24@gmail.com">scott.cabrera24@gmail.com</a> · Also built: <a href="../case-study/index.html">FF League Tracker</a></footer>
+</body>
+</html>

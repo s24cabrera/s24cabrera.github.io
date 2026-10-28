@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="FF League Tracker case study: a record book, season tracker and fact-checked AI weekly recap for my fantasy football leagues. Built by Scott Cabrera with Claude Code.">
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>FF League Tracker</title>
+<link rel="stylesheet" href="../portfolio.css">
+<script src="../theme.js"></script>
+<script src="../tabs.js"></script>
+</head>
+<body>
+<header class="chrome">
+  <div class="chrome-row">
+    <a class="brand" href="../index.html">Scott Cabrera</a>
+    <nav class="tabs" aria-label="Projects">
+      <a href="index.html" aria-current="page">League Tracker</a>
+      <a href="../metrics-that-matter/index.html">Metrics That Matter</a>
+      <a href="https://s24cabrera.github.io/ff-never-sunny/">Live record book</a>
+    </nav>
+    <button class="icon-btn" id="theme" aria-label="Switch light or dark"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+  </div>
+</header>
+
+<main>
+  <div class="pagehead">
+    <p class="eyebrow">Personal project · Case study</p>
+    <h1>FF League Tracker</h1>
+  </div>
+
+  <nav class="sections" aria-label="Sections">
+    <a href="#overview"><span class="n">1</span>Overview</a>
+    <a href="#how"><span class="n">2</span>How it works</a>
+    <a href="#decisions"><span class="n">3</span>Decisions</a>
+    <a href="#results"><span class="n">4</span>Results</a>
+    <a href="#next"><span class="n">5</span>What's next</a>
+  </nav>
+
+  <div class="view on" id="v-overview" aria-label="Overview">
+    <div class="lede">
+      <p class="dek">A record book, season tracker and weekly AI-written recap for my fantasy football leagues. I built it for four leagues, and three use it every week. No recap is published until I approve it.</p>
+      <p class="meta">Started October 2026 · Built with Claude Code · Example: <a href="https://s24cabrera.github.io/ff-never-sunny/">It's Never Sunny in Chicago</a>, the league I commission</p>
+    </div>
+    <div class="tiles">
+      <div class="card tile"><div class="n">3</div><div class="l">leagues using it every week (built for 4)</div></div>
+      <div class="card tile"><div class="n">34</div><div class="l">teams in those three leagues</div></div>
+      <div class="card tile"><div class="n">20</div><div class="l">AI recaps across all four sites, automated since Week 4, each approved by me</div></div>
+      <div class="card tile"><div class="n">~$0.25</div><div class="l">per league per week to write and fact-check a recap</div></div>
+    </div>
+    <section>
+      <div class="section-head"><h2>The problem</h2></div>
+      <div class="prose">
+        <p>ESPN shows this week's matchups and this season's standings, but very little league history. Some of my leagues have played together for more than ten years. Head-to-head records, past champions and memorable weeks were only remembered in the group chat, and writing a weekly recap takes time no one has.</p>
+        <p>The goal was a site league members would open on their own, with all-time records, a live view of the season and a weekly recap they could share in the group chat, without extra work for the commissioner.</p>
+      </div>
+    </section>
+    <section>
+      <div class="section-head"><h2>What I built</h2></div>
+      <div class="grid-2">
+        <div class="card card-pad"><p class="card-title">Record book</p><p class="row-body" style="margin-top:6px">Champions, each manager's career, 18 all-time record lists, a head-to-head grid, finishes by season, draft steals and busts, and luck by season.</p></div>
+        <div class="card card-pad"><p class="card-title">Season tracker</p><p class="row-body" style="margin-top:6px">Scores with projections and win odds, weekly awards, power rankings, schedule luck, points left on the bench, injuries that affected results, and the draft board. Each matchup also shows the two managers' all-time series and their last meeting.</p></div>
+        <div class="card card-pad"><p class="card-title">Manager profiles</p><p class="row-body" style="margin-top:6px">Each manager's titles, record against every opponent, best and worst weeks, and every record they hold. Profiles also show each manager's toughest opponent and the opponent they beat most often.</p></div>
+        <div class="card card-pad"><p class="card-title">AI weekly recap</p><p class="row-body" style="margin-top:6px">A 350 to 500 word recap of the week, written only from that week's verified stats. Each Tuesday I paste a shorter version with the site link into each league's group chat. Each site can be added to a phone's home screen like an app.</p></div>
+      </div>
+    </section>
+    <section>
+      <div class="section-head">
+        <h2>What it looks like</h2>
+        <p class="scope">Phone screens from my league's live site, after Week 7. Swipe to see more.</p>
+      </div>
+      <div class="shots">
+        <figure class="shot" style="margin:0"><img src="img/season-tracker.png" width="390" height="844" alt="Season tracker: standings leader, power ranking leader, season high and low scores and the worst lineup call"><figcaption><b>Season tracker</b><span>Standings, power rankings and the season's highs and lows, with the week's recap right below.</span></figcaption></figure>
+        <figure class="shot" style="margin:0"><img src="img/recap.png" width="390" height="844" alt="Week 7 recap titled Power Kings Reign While Ja'Marrio Kart Wins by a Banana Peel"><figcaption><b>Weekly recap</b><span>Written by Claude from that week's stats. "Copy for group chat" copies a short version with the site link for me to post.</span></figcaption></figure>
+        <figure class="shot" style="margin:0"><img src="img/matchups.png" width="390" height="844" alt="Week 7 scoreboard: each matchup with the score, top scorer, all-time series, last meeting and tags like Revenge game"><figcaption><b>Matchups</b><span>Each game shows the all-time series, the last meeting and tags like "Revenge game": league history as context for this week.</span></figcaption></figure>
+        <figure class="shot" style="margin:0"><img src="img/awards.png" width="390" height="844" alt="Week 7 awards: MVP, High score, Beatdown, Overachiever, Nail-biter, Lucky and Robbed"><figcaption><b>Weekly awards</b><span>MVP, Beatdown, Nail-biter and more, handed out after each completed week.</span></figcaption></figure>
+        <figure class="shot" style="margin:0"><img src="img/record-book.png" width="390" height="844" alt="Record book: ten seasons and 18 managers, most titles, best career win percentage, highest and lowest scores, and champions"><figcaption><b>Record book</b><span>Ten seasons of champions, all-time records and manager careers.</span></figcaption></figure>
+        <figure class="shot" style="margin:0"><img src="img/profile.png" width="390" height="844" alt="Scott Cabrera's manager profile: two titles, an 87-50 career record, playoff history, points per week and luck per season"><figcaption><b>Manager profile</b><span>My own profile: titles, career record, playoffs, finishes by season and rivalries.</span></figcaption></figure>
+      </div>
+    </section>
+    <div class="view-next"><a href="#how">Next: How it works</a></div>
+  </div>
+
+  <div class="view" id="v-how" aria-label="How it works">
+    <section>
+      <div class="section-head">
+        <h2>How a week runs</h2>
+        <p class="scope">If one league's update fails, the others still publish. A failure opens an issue for me to fix instead of publishing bad data.</p>
+      </div>
+      <div class="card flow">
+        <div class="step"><div class="k">Tue 8 AM</div><div class="t">A scheduled job pulls each league's data from ESPN</div></div>
+        <div class="step"><div class="k">Check</div><div class="t">Automated checks look for missing or inconsistent data</div></div>
+        <div class="step"><div class="k">Draft</div><div class="t">Claude writes the recap using only verified facts</div></div>
+        <div class="step"><div class="k">Verify</div><div class="t">A separate AI pass checks every claim against the same facts</div></div>
+        <div class="step"><div class="k">Approve</div><div class="t">I review it on my phone; approving it publishes the site</div></div>
+      </div>
+    </section>
+    <section>
+      <div class="section-head"><h2>How it was built</h2></div>
+      <div class="prose">
+        <p>I built this with Claude Code. I made the product decisions: what to build, who it is for, the rules for the AI, the review process and the tradeoffs described above. Claude wrote most of the code, and I review the results with league members every week. It runs on a Python data pipeline, static websites on GitHub Pages and Claude for the recaps, with no servers to maintain.</p>
+      </div>
+    </section>
+    <div class="view-next"><a href="#decisions">Next: Decisions</a></div>
+  </div>
+
+  <div class="view" id="v-decisions" aria-label="Decisions">
+    <section>
+      <div class="section-head"><h2>Key product decisions</h2></div>
+      <div class="card">
+        <ul class="list">
+          <li><span class="row-title">I approve every recap before it is published</span><span class="row-body">The AI writes the draft, and nothing is published until I approve it. <b>Reason:</b> the recap names real friends. A wrong or unkind line in a group chat damages trust quickly, so a person reviews every recap.</span></li>
+          <li><span class="row-title">Facts first</span><span class="row-body">The AI only sees a fact sheet for the week, with scores, awards, standings, streaks and injuries, and is told not to add anything else. A separate AI pass then checks each claim against the same facts. <b>Reason:</b> accuracy matters most. In the first week, the check caught a line saying a team's defense "outscored his whole roster." The defense scored 30 of the team's 118 points, and the line was corrected before it was published.</span></li>
+          <li><span class="row-title">Rules for the jokes</span><span class="row-body">Injured players are never the target of a joke. A lineup choice only counts as a mistake if ESPN's projections favored the benched player by 1.5 points or more. <b>Reason:</b> the recap should be fun for everyone, so it only jokes about decisions a manager could reasonably have made differently.</span></li>
+          <li><span class="row-title">Testing a change with the leagues</span><span class="row-body">After a league member asked me to "tell Claude to be nicer," I tested a softer recap in Week 6, with one joke per manager and a positive note for struggling teams. The leagues preferred the original style, so I switched back the next week and documented the decision. <b>Reason:</b> the people who read it every week should decide the tone.</span></li>
+          <li><span class="row-title">Checking the data every week</span><span class="row-body">Each run checks that scores are real, records add up, lineups match and data feeds are not empty. If a check fails, the update is marked "do not merge" with the reason. <b>Reason:</b> ESPN's data feed is unofficial and can change without notice. I would rather skip an update than publish wrong numbers. It is the same data quality discipline I use with client data at work.</span></li>
+          <li><span class="row-title">One site per league</span><span class="row-body">Each league has its own web address, name and icon. The code is private and shared across all of them. <b>Reason:</b> each league's history belongs to that league, and a separate site with its own icon feels like the league's own app. Adding a league is mostly configuration, not new code.</span></li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div class="section-head"><h2>Constraints I worked through</h2></div>
+      <div class="card tablewrap">
+        <table>
+          <thead><tr><th>Constraint</th><th>How I handled it</th></tr></thead>
+          <tbody>
+            <tr><td>Inconsistent ESPN data across ten-plus seasons</td><td>I converted every season to one format. Where a season is missing data, such as draft data before 2018 in the two oldest leagues, it is left out of those stats instead of estimated.</td></tr>
+            <tr><td>Privacy of league members</td><td>ESPN member IDs can be used to sign in to ESPN, so the public sites use substitute IDs. Before each code change is saved, I check that no passwords or keys are included.</td></tr>
+            <tr><td>Cost</td><td>About $0.19 to write and $0.06 to fact-check each recap, roughly $5 for all 20 so far. Each recap is saved once and only rewritten when I ask.</td></tr>
+            <tr><td>Yahoo restricted access to its fantasy data</td><td>I built the Yahoo sign-in and applied for approved access instead of working around the restriction. Yahoo approved it, so a fifth league is next.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <div class="view-next"><a href="#results">Next: Results</a></div>
+  </div>
+
+  <div class="view" id="v-results" aria-label="Results">
+    <section>
+      <div class="section-head">
+        <h2>Early results</h2>
+        <p class="scope">October 4 to 28, for the three leagues that use it weekly. The counts include my own visits. The counter does not use cookies, so it counts visits, not individual people.</p>
+      </div>
+      <div class="tiles" style="margin-top:0">
+        <div class="card tile"><div class="n">190</div><div class="l">visits in the first three and a half weeks</div></div>
+        <div class="card tile"><div class="n">53%</div><div class="l">of visits on Tuesday, the day the recap is posted</div></div>
+        <div class="card tile"><div class="n">77%</div><div class="l">of visits go to the season tracker; 10% go to the record book</div></div>
+        <div class="card tile"><div class="n">76%</div><div class="l">of visits are on phones</div></div>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <ul class="list">
+          <li><div class="row-head"><span class="row-title">Used in all three leagues</span></div><span class="row-body">Never Sunny <b>81</b> visits, Film Room <b>56</b>, Valleyboiz+ <b>53</b>.</span></li>
+          <li><div class="row-head"><span class="row-title">Visits from other states</span></div><span class="row-body"><b>82 visits (43%)</b> came from 10 states other than Arizona, where I live, led by Illinois (55) and Georgia (14).</span></li>
+        </ul>
+      </div>
+      <div class="card chart" style="margin-top:16px">
+        <p class="chart-title">Visits by day of the week</p>
+        <p class="chart-sub">Arizona time. Hover over a bar to see its count.</p>
+        <div class="bars">
+          <div class="bar" tabindex="0" aria-label="Mon: 23 visits"><span class="v tip" style="bottom:calc(22.8% + 4px)">23</span><i style="height:22.8%"></i></div>
+          <div class="bar" tabindex="0" aria-label="Tue: 101 visits"><span class="v" style="bottom:calc(100% + 4px)">101 · recap day</span><i style="height:100%"></i></div>
+          <div class="bar" tabindex="0" aria-label="Wed: 42 visits"><span class="v tip" style="bottom:calc(41.6% + 4px)">42</span><i style="height:41.6%"></i></div>
+          <div class="bar" tabindex="0" aria-label="Thu: 6 visits"><span class="v tip" style="bottom:calc(6% + 4px)">6</span><i style="height:6%"></i></div>
+          <div class="bar" tabindex="0" aria-label="Fri: 9 visits"><span class="v tip" style="bottom:calc(9% + 4px)">9</span><i style="height:9%"></i></div>
+          <div class="bar" tabindex="0" aria-label="Sat: 7 visits"><span class="v tip" style="bottom:calc(7% + 4px)">7</span><i style="height:7%"></i></div>
+          <div class="bar" tabindex="0" aria-label="Sun: 2 visits"><span class="v tip" style="bottom:calc(2% + 4px)">2</span><i style="height:2%"></i></div>
+        </div>
+        <div class="days" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+        <table class="sr-only"><caption>Visits by day of the week</caption><tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr><tr><td>23</td><td>101</td><td>42</td><td>6</td><td>9</td><td>7</td><td>2</td></tr></table>
+      </div>
+      <div class="section-head" style="margin:28px 0 12px"><h3 class="card-title">What league members said</h3></div>
+      <div class="quotes">
+        <figure class="card quote"><blockquote>"Go to the website Scott made for our league. And go to manager profiles."</blockquote><figcaption>League member, answering another member's question about where to find their head-to-head records</figcaption></figure>
+        <figure class="card quote"><blockquote>"I enjoy these every week."</blockquote><figcaption>League member, about the weekly recap</figcaption></figure>
+        <figure class="card quote"><blockquote>"I liked these summaries more when my team was good."</blockquote><figcaption>League member, about the weekly recap</figcaption></figure>
+      </div>
+      <p class="row-body" style="margin-top:12px; max-width:42em">By Week 6, a member of one league was posting the recap and the season tracker link in the group chat himself.</p>
+      <div class="prose" style="margin-top:16px">
+        <p><b>What I learned:</b> the weekly recap brings people back, and most visits go to the season tracker. I expected the all-time record book to be the main draw, but it is used more as a reference. League history is most interesting as context for this week's games, which is why each matchup on the season tracker already shows the all-time series. During the season, new work goes to the season tracker first.</p>
+      </div>
+    </section>
+    <section>
+      <div class="section-head"><h2>Shipped so far</h2></div>
+      <div class="card">
+        <ul class="list">
+          <li><div class="row-head"><span class="row-title">Record book, season tracker and AI recaps</span><span class="when">Oct 3</span></div><span class="row-body">Weekly automation with a fact-check and approval from my phone.</span></li>
+          <li><div class="row-head"><span class="row-title">Four leagues, four sites</span><span class="when">Oct 4</span></div><span class="row-body">A site for each league, home-screen icons, data checks on every run, and a visit counter that does not use cookies. Three leagues adopted it. The fourth site stays up to date, but I don't share it with that league until its commissioner agrees.</span></li>
+          <li><div class="row-head"><span class="row-title">Sunday night scores</span><span class="when">Oct 5</span></div><span class="row-body">Scores update Sunday night without a recap, and publish only if the checks pass.</span></li>
+          <li><div class="row-head"><span class="row-title">Fixes from weekly reviews</span><span class="when">Oct 6-27</span></div><span class="row-body">Each week's review becomes a written rule: lineup comparisons that make sense, injury timing, kicker injuries left out of the recap, rosters in each league's lineup order, and the recap tone test described above.</span></li>
+        </ul>
+      </div>
+    </section>
+    <div class="view-next"><a href="#next">Next: What's next</a></div>
+  </div>
+
+  <div class="view" id="v-next" aria-label="What's next">
+    <section>
+      <div class="section-head">
+        <h2>What's next</h2>
+        <p class="scope">Ordered by what league members will notice first.</p>
+      </div>
+      <div class="card">
+        <ul class="list">
+          <li><div class="row-head"><span class="row-title">Yahoo league</span><span class="pill next">Next</span></div><span class="row-body">Access is approved and the sign-in is built. It will be a fifth league on the same system.</span></li>
+          <li><div class="row-head"><span class="row-title">Season tracker as the starting page</span><span class="pill next">Next</span></div><span class="row-body">During the season, open each site on the season tracker instead of the record book, and check whether Tuesday visits continue through the playoffs.</span></li>
+          <li><div class="row-head"><span class="row-title">"Ask the league" assistant</span><span class="pill later">Later</span></div><span class="row-body">A tool that answers questions using the league's own data. I would test it in one league first, with a passcode, a daily limit per person and a monthly cost cap.</span></li>
+          <li><div class="row-head"><span class="row-title">Commissioners approve their own recaps</span><span class="pill later">Later</span></div><span class="row-body">Once the fact-check has a long record with few corrections, each league's commissioner could review its recap instead of me.</span></li>
+        </ul>
+      </div>
+    </section>
+    <div class="view-next"><a href="../metrics-that-matter/index.html">Also see: Metrics That Matter</a></div>
+  </div>
+</main>
+
+<footer>Scott Cabrera · <a href="mailto:scott.cabrera24@gmail.com">scott.cabrera24@gmail.com</a> · Also built: <a href="../metrics-that-matter/index.html">Metrics That Matter</a></footer>
+</body>
+</html>
