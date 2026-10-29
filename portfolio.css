@@ -173,6 +173,17 @@ a.project { display: flex; flex-direction: column; color: var(--text); text-deco
 a.project:hover { text-decoration: none; box-shadow: 0 0 0 1px var(--accent), var(--shadow); }
 a.project .more { margin-top: auto; padding-top: 12px; font-size: 15px; font-weight: 500; color: var(--accent); }
 a.project .more::after { content: " \203A"; }
+/* landing page: a card per project, a row per link (live site, case study) */
+.project-card { display: flex; flex-direction: column; }
+.links { margin-top: auto; border-top: 1px solid var(--sep); }
+.links > li { padding: 0; }
+.links a { display: flex; flex-direction: column; gap: 2px; padding: 14px 20px; color: var(--text); }
+.links a:hover { text-decoration: none; background: var(--fill); }
+.links li:last-child a { border-radius: 0 0 var(--radius) var(--radius); }
+.links .row-title { color: var(--accent); }
+.links .row-title::after { content: " \203A"; }
+.links .row-title:has(.ext)::after { content: none; }
+.links .ext { font-size: 14px; }
 
 /* signal bars (as in the app): 4 rising bars, filled to the metric's tier */
 .sig { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
